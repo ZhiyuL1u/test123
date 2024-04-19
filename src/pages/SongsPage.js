@@ -20,7 +20,7 @@ export default function SongsPage() {
   const [explicit, setExplicit] = useState(false);
 
   useEffect(() => {
-    fetch(`http://${config.server_host}:${config.server_port}/search_songs`)
+    fetch(`https://${config.server_host}:${config.server_port}/search_songs`)
       .then(res => res.json())
       .then(resJson => {
         const songsWithId = resJson.map((song) => ({ id: song.song_id, ...song }));
